@@ -1,13 +1,22 @@
 # Site settings
-title: Blog of Bob Young
+title: 杨波的博客
+
 email: bob.yang.dev@gmail.com
+
 description: > # this means to ignore newlines until "baseurl:"
-  Welcome to my blog. This site shares technologies I have learned 
-  and interesting things I am doing.
-baseurl: "" # the subpath of your site, e.g. /blog/
+  这是我的技术天堂，记载了我快乐的业余时光，内容主要是计算机科学、通信等方面的技术文档和我的一些论文和杂记。
+
+baseurl: "/blog" # the subpath of your site, e.g. /blog/
+
 url: "http://yangbo.github.io" # the base hostname & protocol for your site
+
 twitter_username: yangbo
+
 github_username:  yangbo
 
 # Build settings
 markdown: kramdown
+
+collections:
+    tutorials:
+        output: true
