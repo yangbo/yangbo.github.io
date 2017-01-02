@@ -6,9 +6,20 @@ layout: default
 
   <h1 class="page-heading">python 教程</h1>
 
-  <p>{{site.tutorials.path}}</p>
   <ul class="post-list">
     {% for post in site.tutorials %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h1 class="page-heading">Blog</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

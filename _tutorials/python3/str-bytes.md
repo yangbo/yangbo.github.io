@@ -35,8 +35,8 @@ bytes的字面量写法是
 
         struct.pack('>I', 2017)
         得到: b'\x00\x00\x07\xe1'
-        
-    其中 '>' 表示大端字节序, 'I' 表示转换为 unsigned int 的字节表示, 被称为 (Formatter)[formatter api].
+
+    其中 '>' 表示大端字节序, 'I' 表示转换为 unsigned int 的字节表示, 被称为 [Formatter][formatter api].
     
     如果你需要处理的是一个复杂的网络协议, 你最好还是用 pack/unpack 来做这事, 这样的代码最紧凑.
     
