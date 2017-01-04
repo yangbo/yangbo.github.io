@@ -51,6 +51,8 @@ bytes的字面量写法是
 
         b'\x05%d' % 2
 
+    但是要注意，%d 得到是数字的 ascii 内码，而不是数值本身，即是 50 而不是 2。
+
 # 从`bytes`到`int`的转换方法
 
 1.  使用 struct.unpack(fmt, buff)
