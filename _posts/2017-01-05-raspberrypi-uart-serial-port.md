@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "树莓派(RPi)访问串口使用方法"
+title:  "树莓派(RPi)访问串口的方法"
 date:   2017-01-05 23:03:00
 categories: RaspberryPi UART serail-port
 ---
