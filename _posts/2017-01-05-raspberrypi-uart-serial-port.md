@@ -37,6 +37,26 @@ UART 即 Universal Asynchronous Receiver Transmitter，是一种不用时钟同�
 
 ## 用 WiringPi 访问串口
 
+WiringPi-Python 访问串口的方法
+
+import wiringpi
+
+wiringpi.wiringPiSetup() # For sequential pin numbering, one of these MUST be called before using IO functions
+# OR
+wiringpi.wiringPiSetupSys() # For /sys/class/gpio with GPIO pin numbering
+# OR
+wiringpi.wiringPiSetupGpio() # For GPIO pin numbering
+
+serial = wiringpi.serialOpen('/dev/ttyAMA0',9600) # Requires device/baud and returns an ID
+wiringpi.serialPuts(serial,"hello")
+data = wiringpi.serialGetchar(serial)   # if no data, block for 10 seconds then return -1
+wiringpi.serialClose(serial) # Pass in ID
+
+
+[WiringPi-Python](https://github.com/WiringPi/WiringPi-Python)
+
+[WiringPi homepage](http://wiringpi.com/)
+
 ## 用 PySerial 访问串口
 
 安装：
@@ -50,6 +70,14 @@ UART 即 Universal Asynchronous Receiver Transmitter，是一种不用时钟同�
     serial = wiringpi.serialOpen('/dev/ttyAMA0',9600)
     wiringpi.serialPuts(serial,'hello world!')
     
+# GPIOZero 没有串口访问的相关方法
+
+# RPIO
+
+RPIO 居然也没有串口的访问支持。
+
+[RPIO document](https://pythonhosted.org/RPIO/index.html)
+
 # 参考
 
 * [Configuring The GPIO Serial Port On Raspbian Jessie Including Pi 3](http://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/)
