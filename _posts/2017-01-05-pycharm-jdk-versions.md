@@ -11,4 +11,4 @@ PyCharm64 需要jdk1.8版本，如果系统中安装了多个 JDK，需要选择
 
 # 参考
 
-* https://intellij-support.jetbrains.com/hc/en-us/articles/206544879
+* [Selecting the JDK version the IDE will run under](https://intellij-support.jetbrains.com/hc/en-us/articles/206544879)
