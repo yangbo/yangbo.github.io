@@ -45,6 +45,8 @@ UART 即 Universal Asynchronous Receiver Transmitter，是一种不用时钟同�
     arm_freq=1200
     core_freq=250
 
+的确，重启系统后，就可以正确地读取串口数据了。
+
 参考的是这篇[帖子][pi3 core UART]。更进一步，如果你想提高 core_freq 那么你还得改 UART divider，这需要改
 boot loader 的参数。
 
@@ -86,7 +88,7 @@ WiringPi-Python 访问串口的方法
     wiringpi.wiringPiSetup()
     serial = wiringpi.serialOpen('/dev/ttyAMA0',9600)
     wiringpi.serialPuts(serial,'hello world!')
-    
+
 # GPIOZero 没有串口访问的相关方法
 
 # RPIO
