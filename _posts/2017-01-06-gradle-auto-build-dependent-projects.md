@@ -24,4 +24,5 @@ categories: gradle auto-build-dependent-projects
 
 .gitignore 的配置方法可以用
 
-    
+    !libs/*.jar
+    libs/*
