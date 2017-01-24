@@ -28,6 +28,11 @@ http://detail.zol.com.cn/picture_index_1081/index10805396.shtml
 - [blog about ErgoDox](https://input.club/devices/infinity-ergodox/)
 - [Key64 项目](https://www.key64.org/) 是 ErgoDox 的参考项目
 - [为什么程序员都应该有一个 Ergodox 键盘](http://jjt.io/2013/11/25/why-any-developer-should-check-out-the-ergodox-keyboard/)
+- [ErgoDone DIY Blog](http://wizmann.tk/ergodone.html)
+- [ErgoDone Github](https://github.com/ktec-hq/ErgoDone)
+- [ErgoDone Reddit](https://www.reddit.com/r/MechanicalKeyboards/comments/4x0vje/hmmm_behold_ergodone_a_china_improved_ergodox/)
+- [Teensy](https://www.pjrc.com/teensy/)
+
 
 [key switches]:https://ergodox-ez.com/pages/keyswitches
 [keycaps]:http://keycapsdirect.com/key-caps.php
