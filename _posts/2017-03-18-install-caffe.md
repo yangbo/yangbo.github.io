@@ -2,7 +2,7 @@
 layout: post
 title:  "How to install caffe on Ubuntu 16.04"
 date:   2017-03-18 09:10:00
-categories: DeepLearning Caffe AI
+categories: deep-learning Caffe
 ---
 
 # git clone
