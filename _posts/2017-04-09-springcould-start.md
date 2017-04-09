@@ -97,3 +97,17 @@ categories: spring-boot spring-cloud micro-service
 			assertThat(response.getBody(), equalTo("你好，欢迎使用 Spring Boot Web!"));
 		}
 	}
+
+# 开发一个 spring cloud 服务
+
+## 用 start.spring.io 生成初始项目
+
+选择 web, jpa, h2, devtool 模块
+
+记得将生成的项目 build.gradle 中的 maven 首选仓库改为 阿里云 maven 仓库。
+
+	maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+
+jpa 的文档参考这里：
+
+https://spring.io/guides/gs/accessing-data-jpa/
