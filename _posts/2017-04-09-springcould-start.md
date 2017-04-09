@@ -67,3 +67,33 @@ categories: spring-cloud micro-service
 	
 ## 做集成测试
 
+导入的包是
+
+	import static org.hamcrest.CoreMatchers.equalTo;
+	import static org.junit.Assert.assertThat;
+
+编写测试类
+
+	@RunWith(SpringRunner.class)
+	@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+	public class HelloControllerIT {
+		
+		@LocalServerPort
+		private int port;
+		
+		private URI base;
+		
+		@Autowired
+		private TestRestTemplate template;
+		
+		@Before
+		public void before() throws Exception{
+			this.base = new URI("http://localhost:" + this.port);
+		}
+		
+		@Test
+		public void testHello() {
+			ResponseEntity<String> response = template.getForEntity(this.base, String.class);
+			assertThat(response.getBody(), equalTo("你好，欢迎使用 Spring Boot Web!"));
+		}
+	}
