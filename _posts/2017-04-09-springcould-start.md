@@ -35,4 +35,35 @@ categories: spring-cloud micro-service
 
 ## 尝试使用 spring-boot-devtools 模块
 
+为了方便开发，可以添加一个模块 
+
+	compile('org.springframework.boot:spring-boot-devtools')
+
+这样修改程序后 spring boot 就会自动重启web 容器，达到快速预览的目的。
+
+## 做单元测试
+
+先要引入依赖模块
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+然后编写单元测试类
+
+	@RunWith(SpringRunner.class)
+	@SpringBootTest
+	@AutoConfigureMockMvc
+	public class HelloControllerTest {
+		@Autowired MockMvc mockMvc;
+		
+		@Test
+		public void test() throws Exception{
+			// 1. 构建一个 mock mvc request build
+			MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON_UTF8);
+			// 2. 用 mock mvc 执行请求
+			mockMvc.perform(request).andExpect(status().isOk())
+			.andExpect(content().string(equalTo("你好，欢迎使用 Spring Boot Web!")));
+		}
+	}
+	
+## 做集成测试
 
