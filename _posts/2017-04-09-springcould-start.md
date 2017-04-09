@@ -24,9 +24,15 @@ categories: spring-cloud micro-service
 
 访问 http://start.spring.io 按照提示创建初始项目模板，下载后解压开。
 
+参考[Building Application with spring boot](https://spring.io/guides/gs/spring-boot/)
+来创建一个 hello world web程序。
+
 ## 记得配置 spring-boot-start-web 依赖
 
 更多的spring boot 文档可以参考下面：
 
-http://docs.spring.io/spring-boot/docs/1.5.2.RELEASE/reference/htmlsingle
+[spring boot](http://docs.spring.io/spring-boot/docs/1.5.2.RELEASE/reference/htmlsingle)
+
+## 尝试使用 spring-boot-devtools 模块
+
 
