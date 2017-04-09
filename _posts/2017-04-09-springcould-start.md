@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "spring cloud 开发笔记"
+title:  "spring boot 开发入门示例"
 date:   2017-04-09 13:36:00
-categories: spring-cloud micro-service
+categories: spring-boot spring-cloud micro-service
 ---
 
 # 准备开发环境
