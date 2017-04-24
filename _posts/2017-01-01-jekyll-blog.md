@@ -25,6 +25,9 @@ print_hi('Tom')
 
 只能发布昨天的 posts，例如当前时间是 2017-01-02 那么 posts 的时间只能是 2017-01-01 的，否则 Jekyll 不会生成。
 
+# Jekyll Theme 推荐
+
+[lanyon](https://github.com/poole/lanyon)
 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
