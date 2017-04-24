@@ -27,6 +27,7 @@ print_hi('Tom')
 
 # Jekyll Theme 推荐
 
+[Jekyll Themes List](http://jekyllthemes.org/)
 [lanyon](https://github.com/poole/lanyon)
 
 [jekyll]:      http://jekyllrb.com
