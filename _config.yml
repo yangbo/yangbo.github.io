@@ -19,6 +19,9 @@ github_username:  yangbo
 # Build settings
 markdown: kramdown
 
+highlighter: rouge
+highlighter_style: monokai
+
 collections:
   tutorials:
     output: true

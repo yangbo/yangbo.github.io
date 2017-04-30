@@ -49,22 +49,26 @@ categories: micro-services spring-boot
 
 然后编写单元测试类
 
-	@RunWith(SpringRunner.class)
-	@SpringBootTest
-	@AutoConfigureMockMvc
-	public class HelloControllerTest {
-		@Autowired MockMvc mockMvc;
-		
-		@Test
-		public void test() throws Exception{
-			// 1. 构建一个 mock mvc request build
-			MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON_UTF8);
-			// 2. 用 mock mvc 执行请求
-			mockMvc.perform(request).andExpect(status().isOk())
-			.andExpect(content().string(equalTo("你好，欢迎使用 Spring Boot Web!")));
-		}
-	}
+{% highlight java linenos=table %}
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc
+public class HelloControllerTest {
+	@Autowired MockMvc mockMvc;
 	
+	@Test
+	public void test() throws Exception{
+		// 1. 构建一个 mock mvc request build
+		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON_UTF8);
+		// 2. 用 mock mvc 执行请求
+		mockMvc.perform(request).andExpect(status().isOk())
+		.andExpect(content().string(equalTo("你好，欢迎使用 Spring Boot Web!")));
+	}
+}
+
+{% endhighlight %}
+
 ## 做集成测试
 
 导入的包是
@@ -74,29 +78,31 @@ categories: micro-services spring-boot
 
 编写测试类
 
-	@RunWith(SpringRunner.class)
-	@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
-	public class HelloControllerIT {
-		
-		@LocalServerPort
-		private int port;
-		
-		private URI base;
-		
-		@Autowired
-		private TestRestTemplate template;
-		
-		@Before
-		public void before() throws Exception{
-			this.base = new URI("http://localhost:" + this.port);
-		}
-		
-		@Test
-		public void testHello() {
-			ResponseEntity<String> response = template.getForEntity(this.base, String.class);
-			assertThat(response.getBody(), equalTo("你好，欢迎使用 Spring Boot Web!"));
-		}
+{% highlight java %}
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+public class HelloControllerIT {
+	
+	@LocalServerPort
+	private int port;
+	
+	private URI base;
+	
+	@Autowired
+	private TestRestTemplate template;
+	
+	@Before
+	public void before() throws Exception{
+		this.base = new URI("http://localhost:" + this.port);
 	}
+	
+	@Test
+	public void testHello() {
+		ResponseEntity<String> response = template.getForEntity(this.base, String.class);
+		assertThat(response.getBody(), equalTo("你好，欢迎使用 Spring Boot Web!"));
+	}
+}
+{% endhighlight %}
 
 # 开发一个 spring cloud 服务
 

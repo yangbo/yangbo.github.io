@@ -1,0 +1,32 @@
+table.highlighttable {
+  overflow-x:scroll;
+  display:block;
+}
+
+table.highlighttable td.code {
+  width:100%;
+  background-color: #49483e;
+}
+
+.highlight pre,
+pre code {
+  white-space: pre;
+  display: block;
+  overflow-x: auto;
+}
+
+.lineno {
+	white-space: pre;
+}
+.highlight {
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: #49483e;
+	color: #66d9ef;
+}
+.highlight table,
+pre code table td {
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+}

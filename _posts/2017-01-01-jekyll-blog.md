@@ -55,6 +55,10 @@ Filters like:
 
 [lanyon](https://github.com/poole/lanyon)
 
+# Hack Jekyll Highlighter css
+
+按照这篇 [blog](http://flanneljesus.github.io/jekyll/2014-08-30/solving-jekyll-highlight-linenos) 的内容进行修改。
+
 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
