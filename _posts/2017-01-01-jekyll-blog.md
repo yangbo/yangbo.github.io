@@ -25,11 +25,38 @@ print_hi('Tom')
 
 只能发布昨天的 posts，例如当前时间是 2017-01-02 那么 posts 的时间只能是 2017-01-01 的，否则 Jekyll 不会生成。
 
+# Jekyll 的模板引擎
+
+Jekyll 使用 [Liquid 模板引擎][Liquid] 来处理文件。Liquid 的主要概念非常简单，只有三个，Object、Tag、Filter。
+
+Object like:
+
+	{{ page.title }}
+	
+Tags like:
+
+	{% if user %}
+		Hello {{ user.name }}
+	{% endif %}
+	
+Tags can be categorized into three types:
+
+* [Control flow](http://shopify.github.io/liquid/tags/control-flow/)
+* [Iteration](http://shopify.github.io/liquid/tags/iteration/)
+* [Variable assignments](http://shopify.github.io/liquid/tags/variable/)
+
+Filters like:
+
+	{{ "adam!" | capitalize | prepend: "Hello " }}
+	
 # Jekyll Theme 推荐
 
 [Jekyll Themes List](http://jekyllthemes.org/)
+
 [lanyon](https://github.com/poole/lanyon)
+
 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-help]: https://github.com/jekyll/jekyll-help
+[Liquid]:      https://shopify.github.io/liquid/basics/introduction/
