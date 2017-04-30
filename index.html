@@ -4,10 +4,9 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">python 教程</h1>
-
+  <h1 class="page-heading">Blog</h1>
   <ul class="post-list">
-    {% for post in site.tutorials %}
+    {% for post in site.posts %}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -15,11 +14,21 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-
-  <h1 class="page-heading">Blog</h1>
-
+  
+  <h1 class="page-heading">python 教程</h1>
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in site.tutorials.python3 %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+  
+  <h1 class="page-heading">Deep Learning Blogs</h1>
+  <ul class="post-list">
+    {% for post in site.tutorials.deep-learning %}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
