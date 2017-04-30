@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "MySQL数据库连接超时中断问题"
+date:   2017-01-11 14:00:00
+categories: database mysql
+---
 # 数据库连接超时中断问题
 
 # 8 小时中断异常

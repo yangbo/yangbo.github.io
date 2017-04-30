@@ -2,7 +2,7 @@
 layout: post
 title:  "实现一个自动生成依赖jar包的 gradle 插件"
 date:   2017-01-06 14:00:00
-categories: gradle auto-build-dependent-projects
+categories: gradle
 ---
 
 # 用到的 Groovy 语法

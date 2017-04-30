@@ -2,7 +2,7 @@
 layout: page
 title:  "Deep learning books and resources"
 date:   2017-03-19 22:08:00
-categories: deep-learning resources
+categories: deep-learning
 ---
 
 http://www.deeplearningbook.org/

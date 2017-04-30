@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "人体工学机械键盘 Ergodox DIY 方法"
+date:   2017-01-24 14:00:00
+categories: DIY mechanics-ergonomics-keyboard
+---
 # 介绍
 
 机械键盘的按键更轻松，反应更快，手感更舒适，但是常见的机械键盘都不是人体工学的，而我一直使用微软的人体工学键盘，
@@ -7,7 +13,7 @@
 
 # 术语
 
-- [key switches][key switches] = 键轴，就是常说的茶轴、青轴、黑轴等。
+- [key switches][switches] = 键轴，就是常说的茶轴、青轴、黑轴等。
 
 - Keycaps = 键帽，键帽也是有规范的，例如[DCS Family][keycaps]
 
@@ -34,5 +40,5 @@ http://detail.zol.com.cn/picture_index_1081/index10805396.shtml
 - [Teensy](https://www.pjrc.com/teensy/)
 
 
-[key switches]:https://ergodox-ez.com/pages/keyswitches
-[keycaps]:http://keycapsdirect.com/key-caps.php
+[switches]: https://ergodox-ez.com/pages/keyswitches
+[keycaps]:  http://keycapsdirect.com/key-caps.php

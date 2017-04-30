@@ -20,5 +20,5 @@ github_username:  yangbo
 markdown: kramdown
 
 collections:
-  - tutorials:
-      output: true
+  tutorials:
+    output: true

@@ -2,7 +2,7 @@
 layout: post
 title:  "如何用 Jekyll 创建一个技术博客"
 date:   2017-01-01 22:10:00
-categories: jekyll blog
+categories: blog-tools jekyll
 ---
 本 post 在 `_posts` 目录中。去编辑然后 re-build 本站就能看到你所作的改变了。 你有很多种方法 rebuild 本站，但最常用的方法是运行 `jekyll serve`，这会启动一个 web server 并且当有文件改动时，会自动生成你的网站。
 

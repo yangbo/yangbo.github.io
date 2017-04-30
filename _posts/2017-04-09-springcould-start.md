@@ -2,7 +2,7 @@
 layout: post
 title:  "spring boot 开发入门示例"
 date:   2017-04-09 13:36:00
-categories: spring-boot spring-cloud micro-service
+categories: micro-services spring-boot
 ---
 
 # 准备开发环境

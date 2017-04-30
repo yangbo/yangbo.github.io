@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "MySQL存储过程开发方法"
+date:   2017-01-24 14:00:00
+categories: database mysql
+---
 # Cursor 游标
 
 mysql 存储过程中的游标是 `只读`、`不可滚动`和`敏感`的。

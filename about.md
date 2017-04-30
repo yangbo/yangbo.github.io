@@ -2,6 +2,7 @@
 layout: page
 title: 关于
 permalink: /about/
+show-in-navigator: true
 ---
 
 我是一名软件架构师，日常工作是设计、开发基于Java的分布式系统, 熟悉的编程语言主要是Java和Python。
