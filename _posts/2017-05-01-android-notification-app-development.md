@@ -71,6 +71,8 @@ RabbitMQ 是支持 MQTT v3 的，参考[这里](https://www.rabbitmq.com/mqtt.ht
 
 - Really Small Message Broker (RSMB) ，他是一个简单的[MQTT代理][MQTT Broker]
 
+- java client on [github](https://github.com/fusesource/mqtt-client)
+
 - php 消息发送程序
   https://github.com/tokudu/PhpMQTTClient
   
@@ -153,12 +155,39 @@ private void showNotificationNew(String text) {
 {% endhighlight %}
 
 # 参考 Blog：
-* [Android推送实现]:(http://blog.csdn.net/xyz_lmn/article/details/7528671)
-* [Android推送指南]:(http://blog.csdn.net/joshua_yu/article/details/6563587)
+* [Android推送实现](http://blog.csdn.net/xyz_lmn/article/details/7528671)
+* [Android推送指南](http://blog.csdn.net/joshua_yu/article/details/6563587)
 
 # android kvm linux installation
 
 [speeding-up-the-android-emulator-on-intel](https://software.intel.com/en-us/android/articles/speeding-up-the-android-emulator-on-intel-architecture#_Toc358213272)
+
+# Android Service Development
+
+https://developer.android.com/guide/components/services.html
+https://developer.android.com/reference/android/app/Service.html
+
+注意：服务在其托管进程的主线程中运行，它既不创建自己的线程，也不在单独的进程中运行（除非另行指定）。 这意味着，如果服务将执行任何 CPU 密集型工作或阻止性操作（例如 MP3 播放或联网），则应在服务内创建新线程来完成这项工作。
+
+## IntentService
+
+每次 activity startService 时会创建一个新的 IntentService 对象，虽然服务只有一个，但是
+服务对象却有多个，所以不同对象间的成员变量是不同的。
+
+```
+IntentService 每次 startService 会创建一个线程来处理，如果之前的 Intent 还没有处理完成，则
+会将本次的Intent 放入一个消息队列，等待上一个 Intent 处理完毕后才继续执行新的Intent。
+```
+
+如果 IntentService 很快执行结束，那么从手机上是看不到“服务”的，只会看到一个后台进程。
+
+IntentService is a base class for Services that handle asynchronous requests (expressed as Intents) on demand. Clients send requests through startService(Intent) calls; the service is started as needed, handles each Intent in turn using a worker thread, and stops itself when it runs out of work.
+This "work queue processor" pattern is commonly used to offload tasks from an application's main thread. The IntentService class exists to simplify this pattern and take care of the mechanics. To use it, extend IntentService and implement onHandleIntent(Intent). IntentService will receive the Intents, launch a worker thread, and stop the service as appropriate.
+
+All requests are handled on a single worker thread -- they may take as long as necessary (and will not block the application's main loop), but only one request will be processed at a time.
+
+Service 的 START_NOT_STICKY 选项表示：如果服务运行中途进程被kill，那么该服务不需要重新启动，
+也就是说这个服务会自己以后重新执行，不需要 Service 来重新启动。
 
 
 [android-studio]: https://developer.android.com/studio/install.html
