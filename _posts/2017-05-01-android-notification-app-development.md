@@ -207,9 +207,9 @@ Service 的 START_NOT_STICKY 选项表示：如果服务运行中途进程被kil
 * 服务运行在 main thread 中，而线程则运行在独立的thread中。
 
 ## Android Constraints Layout
-http://www.jianshu.com/p/a8b49ff64cd3
-https://developer.android.com/training/constraint-layout/index.html
-https://developer.android.com/reference/android/support/constraint/ConstraintLayout.html
+* [Android ConstraintLayout详解](http://www.jianshu.com/p/a8b49ff64cd3)
+* [constraint layout](https://developer.android.com/training/constraint-layout/index.html)
+* [constraint layout reference](https://developer.android.com/reference/android/support/constraint/ConstraintLayout.html)
 
 [android-studio]: https://developer.android.com/studio/install.html
 [connect network]: https://developer.android.com/training/basics/network-ops/connecting.html
