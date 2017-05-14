@@ -206,6 +206,11 @@ Service 的 START_NOT_STICKY 选项表示：如果服务运行中途进程被kil
 * 服务可以接收 Intent 消息，而线程不能。
 * 服务运行在 main thread 中，而线程则运行在独立的thread中。
 
+## Android Constraints Layout
+http://www.jianshu.com/p/a8b49ff64cd3
+https://developer.android.com/training/constraint-layout/index.html
+https://developer.android.com/reference/android/support/constraint/ConstraintLayout.html
+
 [android-studio]: https://developer.android.com/studio/install.html
 [connect network]: https://developer.android.com/training/basics/network-ops/connecting.html
 [MQTT]: http://baike.baidu.com/link?url=Q60ei2-mhqhLqNixFrTfbo7mTaGtLYddPJp6rbefA3GGBYJLpdWH4NUodpnC4_-mWSz0FS5fZ2A7PI7FUN0qBq
