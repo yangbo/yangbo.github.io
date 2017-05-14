@@ -178,6 +178,9 @@ https://developer.android.com/reference/android/app/Service.html
 IntentService 每次 startService 会创建一个线程来处理，如果之前的 Intent 还没有处理完成，则
 会将本次的Intent 放入一个消息队列，等待上一个 Intent 处理完毕后才继续执行新的Intent。
 ```
+IntentService 可以用 setIntentRedelivery(boolean enabled)控制 onStartCommand() 的返回值。
+如果 mRedelivery = false (默认) 那么 onStartCommand() 就返回 START_NOT_STICKY，即不会重新
+投递 Intent。
 
 如果 IntentService 很快执行结束，那么从手机上是看不到“服务”的，只会看到一个后台进程。
 
@@ -186,9 +189,22 @@ This "work queue processor" pattern is commonly used to offload tasks from an ap
 
 All requests are handled on a single worker thread -- they may take as long as necessary (and will not block the application's main loop), but only one request will be processed at a time.
 
+综上所述，IntentService 只适合执行很快的后台任务，这些任务将会尽量在一个线程中执行，
+任务执行结束后服务会自动退出。
+
 Service 的 START_NOT_STICKY 选项表示：如果服务运行中途进程被kill，那么该服务不需要重新启动，
 也就是说这个服务会自己以后重新执行，不需要 Service 来重新启动。
 
+## 您应使用服务还是线程？
+简单地说，服务是一种即使用户未与应用交互也可在后台运行的组件。 因此，您应仅在必要时才创建服务。
+
+如需在主线程外部执行工作，不过只是在用户正在与应用交互时才有此需要，则应创建新线程而非服务。 例如，如果您只是想在 Activity 运行的同时播放一些音乐，则可在 onCreate() 中创建线程，在 onStart() 中启动线程，然后在 onStop() 中停止线程。您还可以考虑使用 AsyncTask 或 HandlerThread，而非传统的 Thread 类。如需了解有关线程的详细信息，请参阅进程和线程文档。
+
+请记住，如果您确实要使用服务，则默认情况下，它仍会在应用的主线程中运行，因此，如果服务执行的是密集型或阻止性操作，则您仍应在服务内创建新线程。
+
+## Service, IntentService, Thread 的区别和联系
+* 服务可以接收 Intent 消息，而线程不能。
+* 服务运行在 main thread 中，而线程则运行在独立的thread中。
 
 [android-studio]: https://developer.android.com/studio/install.html
 [connect network]: https://developer.android.com/training/basics/network-ops/connecting.html
